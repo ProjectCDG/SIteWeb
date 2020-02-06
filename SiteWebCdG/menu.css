@@ -1,0 +1,49 @@
+.menu {
+	text-align: center;
+	display: flex;
+	z-index: 1;
+}
+
+.menu .categorie {
+	flex: 1;
+	background: #FFA500;
+	position: relative;  /* pour être la «racine» du sous-menu en absolute */
+}
+
+.menu .categorie ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: 0;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;  /* pour avoir la même largeur que la «racine» */
+}
+
+.menu .categorie:hover ul {
+	max-height: 50em;
+	transition: 1s;
+}
+
+.menu h3,
+.menu a {
+	display: block;
+	margin: 0;
+	padding: .5em 1.5em;
+	font-size: inherit;
+	color: black;
+	background-color: #FFA500;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.menu .categorie:hover h3 {
+	color: white;
+	background-color: #E95F00;
+}
+
+.menu a:hover {
+	color: white;
+	background-color: #FFA500;
+}
