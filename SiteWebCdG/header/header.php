@@ -28,7 +28,6 @@
 
 			  <h6><font color="white">Vous êtes connectez en tant que : </font></h2>
 			  	<p><font color="white" class="text-center"> <?php echo $_SESSION['first_name']?> <?php echo $_SESSION['last_name']?></font></^p>
-			  	<p><font color="white"> Vous avez créer votre compte le : <?php echo $_SESSION['registration_date']?> </font></p>
 			  	  <button type="button" class="btn btn-secondary" onclick="location.href = 'logout.php'" >Deconnexion</button>
 
 					</div>
@@ -61,7 +60,6 @@
 
 		<h6><font color="white">Vous êtes connectez en tant que : </font></h2>
 			<p><font color="white" class="text-center"> <?php echo $_SESSION['first_name']?> <?php echo $_SESSION['last_name']?></font></^p>
-			<p><font color="white"> Vous avez créer votre compte le : <?php echo $_SESSION['registration_date']?> </font></p>
 				<button type="button" class="btn btn-secondary" onclick="location.href = 'logout.php'" >Deconnexion</button>
 
 			</div>

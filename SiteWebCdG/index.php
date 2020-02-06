@@ -27,9 +27,32 @@
   </nav>
 <!-- Center Column Content Section TEST -->
 <div class="col-sm-10">
-  <h2 class="text-center">TODO </h2>
+  <h2 class="text-center">TODO</h2>
 
-  <h5 class="text-center">TODO salut</h5>
+  <h5 class="text-center">TODO</h5>
+  <table class="table table-bordered">
+    <caption>Membres de Worldwide Community</caption>
+    <tr>
+      <th><p class="text-error">#</p></th>
+      <th><p class="text-error">Pseudo</p></th>
+      <th><p class="text-error">Prénom</p></th>
+      <th><p class="text-error">Nom</p></th>
+      <th><p class="text-error">Statut du compte</p></th>
+      <th><p class="text-error">Profil</p></th>
+    </tr>
+    <tr>
+      <? while($row = $req->fetch()) { ?>
+        <td><? echo $row['userid']; ?></td>
+        <td><? echo $row['first_name']; ?></td>
+        <td><? echo $row['last_name']; ?></td>
+        <td><? echo $row['email']; ?></td>
+        <td><? if ($row['verified'] == "0") { echo 'Membre'; } if ($row['verified'] == "1") { echo '<p class="text-warning"><strong>Modérateur</strong></p>'; } if ($row['verified'] == "2") { echo '<p class="text-error"><strong>Administrateur</strong></p>'; } ?></td>
+        <td><? echo '<a class="btn btn-info" href="profil?user='.$row['username'].'">Voir le profil</a><br/>'; ?></td>
+    </tr>
+     <? }
+$req->closeCursor();
+?>
+</table>
 
   <link rel="stylesheet" href="menu.css">
 <nav class="menu">
@@ -45,14 +68,8 @@
 			</ul>
 		</section>
 	</nav>
-    <hr size=8 width="100%">
-    <h2 class="text-center">Description</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
 
 </div>
 </div>
