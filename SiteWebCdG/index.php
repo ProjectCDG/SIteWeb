@@ -29,7 +29,7 @@
 <div class="col-sm-10">
   <h2 class="text-center">TODO </h2>
 
-  <h5 class="text-center">TODO </h5>
+  <h5 class="text-center">TODO salut</h5>
 
   <link rel="stylesheet" href="menu.css">
 <nav class="menu">
