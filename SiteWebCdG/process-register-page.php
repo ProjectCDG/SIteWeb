@@ -41,7 +41,7 @@ try {
         mysqli_stmt_prepare($q, $query);
         // use prepared statement to insure that only text is inserted
         // bind fields to SQL Statement
-        mysqli_stmt_bind_param($q, 'ssss', $first_name, $last_name, $email, $hashed_passcode);
+        mysqli_stmt_bind_param($q,'ssss', $first_name, $last_name, $email, $hashed_passcode);
      // execute query
         mysqli_stmt_execute($q);
         if (mysqli_stmt_affected_rows($q) == 1) {	// One record inserted	#11

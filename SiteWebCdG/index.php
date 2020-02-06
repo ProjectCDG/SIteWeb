@@ -2,8 +2,8 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Orange</title>
-   <link rel="shortcut icon" href="images/orangelogo.ico">
+   <title>EREMS</title>
+   <link rel="shortcut icon" href="images/eremsLogo.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Fichier CSS Bootstrap  -->
