@@ -25,7 +25,7 @@
 		<?php include('nav.php'); ?>
       </ul>
   </nav>
-<!-- Center Column Content Section -->
+<!-- Center Column Content Section TEST -->
 <div class="col-sm-10">
   <h2 class="text-center">TODO </h2>
 
