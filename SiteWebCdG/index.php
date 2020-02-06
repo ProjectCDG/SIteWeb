@@ -27,14 +27,14 @@
   </nav>
 <!-- Center Column Content Section -->
 <div class="col-sm-10">
-  <h2 class="text-center">Devis </h2>
+  <h2 class="text-center">TODO </h2>
 
-  <h5 class="text-center">Sélectionnez la prestation </h5>
+  <h5 class="text-center">TODO </h5>
 
   <link rel="stylesheet" href="menu.css">
 <nav class="menu">
 		<section class="categorie">
-			<h3>Prestations</h3>
+			<h3>TODO</h3>
 			<ul>
         <?php  include('inc/db.php'); ?>
         <?php  $resultat = mysqli_query($db,"SELECT id, titre FROM doc") or die ("requète non executé");

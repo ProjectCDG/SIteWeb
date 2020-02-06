@@ -15,43 +15,43 @@
 <div class="container" style="margin-top:30px">
 <!-- Header Section -->
 <header class="jumbotron text-center row col-sm-14"
-style="margin-bottom:2px; background:linear-gradient(black, #FFA500); padding:20px;">
+  style="margin-bottom:2px; background:linear-gradient(black, #FFA500); padding:20px;">
   <?php include('header/header.php'); ?>
 </header>
 <!-- Body Section -->
   <div class="row" style="padding-left: 0px;">
 <!-- Left-side Column Menu Section -->
-  <nav class="col-sm-2">
+    <nav class="col-sm-2">
       <ul class="nav nav-pills flex-column">
-		<?php include('nav.php'); ?>
+		  <?php include('nav.php'); ?>
       </ul>
-  </nav>
+    </nav>
   <!-- Validate Input -->
 <div class="col-sm-8">
-<h2 class="h2 text-center">Connexion</h2>
-<form action="#" method="post" onsubmit="return checked();"
-name="regform" id="regform">
-<div class="form-group row">
-    <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
-    <div class="col-sm-8">
-      <input type="email" class="form-control" id="email" name="email"
-    placeholder="E-mail" maxlength="60" required>
+  <h2 class="h2 text-center">Connexion</h2>
+  <form action="#" method="post" onsubmit="return checked();"
+  name="regform" id="regform">
+    <div class="form-group row">
+      <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
+        <div class="col-sm-8">
+          <input type="email" class="form-control" id="email" name="email"
+          placeholder="E-mail" maxlength="60" required>
+        </div>
     </div>
-  </div>
-<div class="form-group row">
-    <label for="password1" class="col-sm-4 col-form-label">Mot de passe:</label>
-    <div class="col-sm-8">
-      <input type="password" class="form-control" id="password" name="password"
-    placeholder="Password" minlength="8" maxlength="12" required>
-    <span id='message'>Entre 8 et 12 caractères.</span>
+    <div class="form-group row">
+      <label for="password1" class="col-sm-4 col-form-label">Mot de passe:</label>
+        <div class="col-sm-8">
+          <input type="password" class="form-control" id="password" name="password"
+          placeholder="Password" minlength="8" maxlength="12" required>
+          <span id='message'>Entre 8 et 12 caractères.</span>
+        </div>
     </div>
-  </div>
 
-<div class="form-group row">
-    <div class="col-sm-12">
-  <input id="Connexion" class="btn btn-primary" type="submit" name="login_btn" value="Connexion">
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <input id="Connexion" class="btn btn-primary" type="submit" name="login_btn" value="Connexion">
+      </div>
     </div>
-  </div>
   </form>
 </div>
 <!--<?php include('process-login.php');
