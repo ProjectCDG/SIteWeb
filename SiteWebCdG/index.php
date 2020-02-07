@@ -30,13 +30,13 @@
   <h2 class="text-center">TODO</h2>
 
   <h5 class="text-center">TODO</h5>
+  <?if (isset($_SESSION['last_name'])) { ?>
   <table class="table table-bordered">
-
     <tr>
-      <th><p class="text-error">#</p></th>
-      <th><p class="text-error">Pseudo</p></th>
+      <th><p class="text-error">id</p></th>
       <th><p class="text-error">Prénom</p></th>
       <th><p class="text-error">Nom</p></th>
+      <th><p class="text-error">Date création</p></th>
     </tr>
 
       <?php  include('inc/db.php'); ?>
@@ -50,6 +50,7 @@
             echo "<td>" .$ligne['register_date']. "</td>";
           echo"</tr>";
         }?>
+<?}?>
 
 
   </table>
