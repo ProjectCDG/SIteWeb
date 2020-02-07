@@ -22,7 +22,7 @@
 <!-- Left-side Column Menu Section -->
   <nav class="col-sm-2">
       <ul class="nav nav-pills flex-column">
-		<?php include('nav.php'); ?>
+		      <?php include('nav.php'); ?>
       </ul>
   </nav>
 <!-- Center Column Content Section TEST -->
@@ -31,28 +31,28 @@
 
   <h5 class="text-center">TODO</h5>
   <table class="table table-bordered">
-    <caption>Membres de Worldwide Community</caption>
+
     <tr>
       <th><p class="text-error">#</p></th>
       <th><p class="text-error">Pseudo</p></th>
       <th><p class="text-error">Prénom</p></th>
       <th><p class="text-error">Nom</p></th>
-      <th><p class="text-error">Statut du compte</p></th>
-      <th><p class="text-error">Profil</p></th>
     </tr>
-    <tr>
-      <? while($row = $req->fetch()) { ?>
-        <td><? echo $row['userid']; ?></td>
-        <td><? echo $row['first_name']; ?></td>
-        <td><? echo $row['last_name']; ?></td>
-        <td><? echo $row['email']; ?></td>
-        <td><? if ($row['verified'] == "0") { echo 'Membre'; } if ($row['verified'] == "1") { echo '<p class="text-warning"><strong>Modérateur</strong></p>'; } if ($row['verified'] == "2") { echo '<p class="text-error"><strong>Administrateur</strong></p>'; } ?></td>
-        <td><? echo '<a class="btn btn-info" href="profil?user='.$row['username'].'">Voir le profil</a><br/>'; ?></td>
-    </tr>
-     <? }
-$req->closeCursor();
-?>
-</table>
+
+      <?php  include('inc/db.php'); ?>
+      <?php $resultat = mysqli_query($db,"SELECT userid, first_name, last_name, register_date FROM users") or die ("requète non executé");
+        if (! $resultat) { echo "Erreur requete"; exit;}
+        while ($ligne=mysqli_fetch_array($resultat)){
+          echo"<tr>";
+            echo "<td>" .$ligne['userid']. "</td>";
+            echo "<td>" .$ligne['first_name']. "</td>";
+            echo "<td>" .$ligne['last_name']. "</td>";
+            echo "<td>" .$ligne['register_date']. "</td>";
+          echo"</tr>";
+        }?>
+
+
+  </table>
 
   <link rel="stylesheet" href="menu.css">
 <nav class="menu">
@@ -74,6 +74,6 @@ $req->closeCursor();
 </div>
 </div>
 </div>
-</div>
+
 </body>
 </html>
