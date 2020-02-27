@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+<section class = "utilisateurs">
+  <header class="inner">
+    <h2>Utilisateurs</h2>
+  </header>
+  <div class="inner">
+    <table class="table table-bordered">
+      <tr>
+         <th><p class="text-error">id</p></th>
+         <th><p class="text-error">Prénom</p></th>
+         <th><p class="text-error">Nom</p></th>
+         <th><p class="text-error">Email</p></th>
+         <th><p class="text-error">Date création</p></th>
+      </tr>
+      {% for utilisateur in utilisateurs %}
+        <tr>
+          <td><p class="text-error">{{utilisateur.id}}</p></td>
+          <td><p class="text-error">{{utilisateur.firstname}}</p></td>
+          <td><p class="text-error">{{utilisateur.lastname}}</p></td>
+          <td><p class="text-error">{{utilisateur.email}}</p></td>
+          <td><p class="text-error">{{utilisateur.registerdate | date('d/m/Y')}}</p></td>
+        </tr>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

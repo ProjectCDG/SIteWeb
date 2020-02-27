@@ -1,0 +1,44 @@
+{% extends 'base.html.twig '%}
+{% block body%}
+
+<div class="inner">
+  <form action="#" method="post" onsubmit="return checked();"
+  name="regform" id="regform">
+    <header>
+      <h3>Connexion</h3>
+    </header>
+    <div class="inner">
+      <label for="email" class="label">E-mail:</label>
+      <input type="email" class="form-control" id="email" name="email"
+      placeholder="E-mail" maxlength="60" required>
+    </div>
+      <div class="inner">
+        <label for="password1" class="label">Mot de passe:</label><br/>
+        <div class="inner">
+        <input type="password" class="form-control" id="password" name="password"
+        placeholder="Password" minlength="8" maxlength="12" required>
+        <span id='message'>Entre 8 et 12 caractères.</span>
+      </div>
+    </div>
+    <footer>
+      <input id="Connexion" class="btn btn-primary" type="submit" name="login_btn" value="Connexion">
+    </footer>
+  </form>
+</div>
+<!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <div class="flex">
+        <ul class="icons">
+          <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+          <li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+          <li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock%}
