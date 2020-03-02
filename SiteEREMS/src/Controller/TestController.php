@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ObjectManager;
 use App\Entity\Utilisateur;
 
 class TestController extends AbstractController
@@ -41,8 +43,31 @@ class TestController extends AbstractController
     /**
      * @Route("/signUp", name="signUp")
      */
-    public function signUp()
+    public function signUp(Request $request, ObjectManager $manager)
     {
+      dump($request);
+
+      if($request->request->count() > 0){
+        $utilisateurs = new Utilisateur();
+        $utilisateurs->setFirstName($request->request->get('first_name'))
+                     ->setLastName($request->request->get('last_name'))
+                     ->setEmail($request->request->get('email'))
+                     ->setPassword($request->request->get('password1'))
+                     ->setRegisterDate(new \DateTime());
+
+        $manager->persist($utilisateurs);
+        $manager->flush();
+
+        return $this->redirectToRoute('test');
+      }
       return $this->render('test/signUp.html.twig');
     }
+    /**
+     * @Route("/signUp/new", name="user_create")
+     */
+    public function create()
+    {
+      return $this->render('test/user_create.html.twig');
+    }
+
 }
