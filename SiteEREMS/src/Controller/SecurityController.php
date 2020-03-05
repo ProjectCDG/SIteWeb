@@ -22,7 +22,7 @@ class SecurityController extends AbstractController
 
       $utilisateurs = $repo->findAll();
 
-      return $this->render('test/index.html.twig', [
+      return $this->render('test/users.html.twig', [
           'controller_name' => 'TestController',
           'utilisateurs' => $utilisateurs
       ]);

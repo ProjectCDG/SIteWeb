@@ -38,6 +38,8 @@ class Utilisateur
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="8", minMessage = "8 characters minimum")
+     * @Assert\EqualTo(propertyPath="confirm_password", message = "your password must be the same as confirm password")
      */
     private $password;
 
@@ -46,14 +48,17 @@ class Utilisateur
      */
     private $register_date;
 
+    /**
+    * @Assert\EqualTo(propertyPath="password", message = "your password should not be different")
+    */
     public $confirm_password;
 
-    public function getConfirmPassword(): ?int
+    public function getConfirmPassword(): ?string
     {
         return $this->confirm_password;
     }
 
-    public function setConfirmPassword(): ?int
+    public function setConfirmPassword(): ?string
     {
       $this->confirm_password = $confirm_password;
     }
