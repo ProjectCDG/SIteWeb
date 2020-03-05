@@ -1,37 +1,14 @@
 {% extends 'base.html.twig '%}
 {% block body%}
-
 <div class="inner">
-  <form action="" method="post"
-  name="regform" id="regform">
-    <header>
-      <h3>Inscription</h3>
-    </header>
-    <div class="inner">
-      <label for="first_name" class="form-control">Prénom:</label>
-      <input type="text" class="form-control" id="first_name" name="first_name"
-      placeholder="First Name" maxlength="30" required >
-    </div>
-    <div class="inner">
-      <label for="last_name" class="form-control">Nom:</label>
-      <input type="text" class="form-control" id="last_name" name="last_name"
-      placeholder="Last Name" maxlength="40" required>
-    </div>
-    <div class="inner">
-      <label for="email" class="col-sm-4 col-form-label">E-mail:</label>
-      <input type="email" class="form-control" id="email" name="email"
-      placeholder="E-mail" maxlength="60" required>
-    </div>
-    <div class="inner">
-      <label for="password1" class="col-sm-4 col-form-label">Mot de passe:</label>
-      <input type="password" class="form-control" id="password1" name="password1"
-      placeholder="Password" minlength="8" maxlength="12" required
-      <span id='message'>Entre 8 et 12 caractères.</span>
-    </div>
+{{ form_start(formUtilisateurs) }}
 
-    <footer>
-      <input id="submit" class="btn btn-primary" type="submit" name="submit" value="Valider">
-    </footer>
-  </form>
+  {{ form_row(formUtilisateurs.first_name, {'attr':{'placeholder': "Firstname"}}) }}
+  {{ form_row(formUtilisateurs.last_name, {'attr':{'placeholder': "Lastname"}}) }}
+  {{ form_row(formUtilisateurs.email, {'attr':{'placeholder': "Email "}}) }}
+  {{ form_row(formUtilisateurs.password, {'attr':{'placeholder': "password (8 characters minimum) "}}) }}
+
+  <button type="submit" class="btn btn-success">Submit</button>
+{{form_end(formUtilisateurs)}}
 </div>
 {% endblock %}

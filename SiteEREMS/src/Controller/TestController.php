@@ -5,13 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Utilisateur;
+use App\Form\UtilisateursType;
 
 class TestController extends AbstractController
 {
     /**
-     * @Route("/test", name="test")
+     * @Route("/user", name="user_page")
      */
     public function index()
     {
@@ -47,21 +49,26 @@ class TestController extends AbstractController
     {
       dump($request);
 
-      if($request->request->count() > 0){
-        $utilisateurs = new Utilisateur();
-        $utilisateurs->setFirstName($request->request->get('first_name'))
-                     ->setLastName($request->request->get('last_name'))
-                     ->setEmail($request->request->get('email'))
-                     ->setPassword($request->request->get('password1'))
-                     ->setRegisterDate(new \DateTime());
+      $utilisateurs = new Utilisateur();
+
+      $form = $this->createForm(UtilisateursType::class ,$utilisateurs);
+
+      $form->handleRequest($request);
+
+      if($form->isSubmitted() && $form->isValid()){
+        $utilisateurs->setRegisterDate(new \DateTime());
 
         $manager->persist($utilisateurs);
         $manager->flush();
 
-        return $this->redirectToRoute('test');
+        return $this->redirectToRoute('user_page');
       }
-      return $this->render('test/signUp.html.twig');
+
+      return $this->render('test/signUp.html.twig', [
+            'formUtilisateurs' => $form->createView()
+      ]);
     }
+
     /**
      * @Route("/signUp/new", name="user_create")
      */
