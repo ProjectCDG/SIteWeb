@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
@@ -17,17 +18,21 @@ class Utilisateur
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=60)1
+     * @Assert\Length(min=10, max=255)
      */
     private $first_name;
 
     /**
      * @ORM\Column(type="string", length=60)
+     * @Assert\Length(min=10, max=255)
+
      */
     private $last_name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $email;
 
@@ -40,6 +45,18 @@ class Utilisateur
      * @ORM\Column(type="datetime")
      */
     private $register_date;
+
+    public $confirm_password;
+
+    public function getConfirmPassword(): ?int
+    {
+        return $this->confirm_password;
+    }
+
+    public function setConfirmPassword(): ?int
+    {
+      $this->confirm_password = $confirm_password;
+    }
 
     public function getId(): ?int
     {

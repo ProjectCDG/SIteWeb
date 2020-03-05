@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UtilisateursType extends AbstractType
+class SignUpType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -16,6 +16,7 @@ class UtilisateursType extends AbstractType
             ->add('last_name')
             ->add('email')
             ->add('password')
+            ->add('confirm_password')
         ;
     }
 
