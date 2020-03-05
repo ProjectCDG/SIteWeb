@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  */
-class Utilisateur
+class Utilisateur implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -19,16 +20,22 @@ class Utilisateur
 
     /**
      * @ORM\Column(type="string", length=60)1
-     * @Assert\Length(min=10, max=255)
+     * @Assert\Length(min=3, max=255)
      */
     private $first_name;
 
     /**
      * @ORM\Column(type="string", length=60)
-     * @Assert\Length(min=10, max=255)
+     * @Assert\Length(min=3, max=255)
 
      */
     private $last_name;
+    /**
+     * @ORM\Column(type="string", length=60)
+     * @Assert\Length(min=10, max=255)
+
+     */
+    private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -39,7 +46,7 @@ class Utilisateur
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min="8", minMessage = "8 characters minimum")
-     * @Assert\EqualTo(propertyPath="confirm_password", message = "your password must be the same as confirm password")
+     *
      */
     private $password;
 
@@ -104,6 +111,18 @@ class Utilisateur
         return $this;
     }
 
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     public function getEmail(): ?string
     {
         return $this->email;
@@ -138,5 +157,18 @@ class Utilisateur
         $this->register_date = $register_date;
 
         return $this;
+    }
+
+    public function eraseCredentials()
+    {
+
+    }
+    public function getSalt()
+    {
+
+    }
+    public function getRoles()
+    {
+      return ['ROLE_USER'];
     }
 }

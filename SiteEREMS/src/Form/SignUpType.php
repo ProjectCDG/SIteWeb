@@ -16,6 +16,7 @@ class SignUpType extends AbstractType
             ->add('first_name')
             ->add('last_name')
             ->add('email')
+            ->add('username')
             ->add('password', PasswordType::class)
             ->add('confirm_password', PasswordType::class)
         ;

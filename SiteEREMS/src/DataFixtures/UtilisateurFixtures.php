@@ -14,6 +14,7 @@ class UtilisateurFixtures extends Fixture
           $utilisateur = new Utilisateur();
           $utilisateur->setFirstName("prénom n°$i")
                       ->setLastName("nom n°$i")
+                      ->setUsername("username n°$i")
                       ->setEmail("mail n°$i")
                       ->setPassword("password n°$i")
                       ->setRegisterDate(new \DateTime());

@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Utilisateur;
 use App\Form\SignUpType;
@@ -30,7 +32,7 @@ class SecurityController extends AbstractController
   /**
    * @Route("/signUp", name="signUp")
    */
-  public function signUp(Request $request, ObjectManager $manager)
+  public function signUp(Request $request, ObjectManager $manager, UserPasswordEncoderInterface $encoders)
   {
     dump($request);
 
@@ -42,6 +44,10 @@ class SecurityController extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){
       $utilisateurs->setRegisterDate(new \DateTime());
+
+      //encodage du mot de passe
+      $hash = $encoders->encodePassword($utilisateurs, $utilisateurs->getPassword());
+      $utilisateurs->setPassword($hash);
 
       $manager->persist($utilisateurs);
       $manager->flush();
