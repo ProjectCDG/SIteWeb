@@ -1,0 +1,31 @@
+{% extends 'base.html.twig '%}
+
+
+{% block body %}
+<section class = "Pieces">
+  <header class="inner">
+    <h2>Pieces</h2>
+  </header>
+  <div class="inner">
+    <table class="table table-bordered">
+      <tr>
+         <th><p class="text-error">id</p></th>
+         <th><p class="text-error">identifiant Pièce</p></th>
+         <th><p class="text-error">Nom</p></th>
+         <th><p class="text-error">Centre de gravité</p></th>
+         <th><p class="text-error">Poids</p></th>
+         <th><p class="text-error">Date mise production</p></th>
+      </tr>
+      {% for piece in pieces %}
+        <tr>
+          <td><p class="text-error">{{piece.id}}</p></td>
+          <td><p class="text-error">{{piece.idenPiece}}</p></td>
+          <td><p class="text-error">{{piece.nomPiece}}</p></td>
+          <td><p class="text-error">{{piece.cdg}}</p></td>
+          <td><p class="text-error">{{piece.poids}}</p></td>
+          <td><p class="text-error">{{piece.dateProduction | date('d/m/Y')}}</p></td>
+        </tr>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

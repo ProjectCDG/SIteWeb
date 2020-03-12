@@ -8,7 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Utilisateur;
+use App\Entity\Piece;
 use App\Form\SignUp;
+
 
 class TestController extends AbstractController
 {
@@ -29,14 +31,21 @@ class TestController extends AbstractController
     {
       return $this->render('test/signIn.html.twig');
     }
-
-
     /**
-     * @Route("/signUp/new", name="user_create")
+     * @Route("/piece", name="piece_page")
      */
-    public function create()
+    public function index()
     {
-      return $this->render('test/user_create.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Piece::class);
+        $pieces = new Piece();
+        $pieces->setDateProduction(new \DateTime());
+        $pieces = $repo->findAll();
+        
+
+        return $this->render('test/piece.html.twig', [
+            'controller_name' => 'TestController',
+            'pieces' => $pieces
+        ]);
     }
 
 }

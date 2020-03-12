@@ -5,9 +5,14 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
+ *@UniqueEntity(
+ *  fields= {"email"},
+ *  message= "email must be unique"
+ *)
  */
 class Utilisateur implements UserInterface
 {
@@ -32,14 +37,14 @@ class Utilisateur implements UserInterface
     private $last_name;
     /**
      * @ORM\Column(type="string", length=60)
-     * @Assert\Length(min=10, max=255)
+     * @Assert\Length(min=5, max=255)
 
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
-     *
+     * @Assert\Email()
      */
     private $email;
 
@@ -73,18 +78,6 @@ class Utilisateur implements UserInterface
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUserid(): ?int
-    {
-        return $this->userid;
-    }
-
-    public function setUserid(int $userid): self
-    {
-        $this->userid = $userid;
-
-        return $this;
     }
 
     public function getFirstName(): ?string
