@@ -13,8 +13,8 @@ class PieceFixtures extends Fixture
         for($i =1;$i <= 10;$i++)
         {
           $piece = new Piece();
-          $piece->setIdenPiece("identifiant n°$i")
-                ->setNomPiece("nom n°$i")
+          $piece->setidenPiece("identifiantPiece n°$i")
+                ->setidenMesure("mesure n°$i")
                 ->setCdG('10.0')
                 ->setPoids('10.0')
                 ->setDateProduction(new \DateTime());

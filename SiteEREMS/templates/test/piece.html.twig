@@ -4,6 +4,7 @@
 {% block body %}
   <div class="inner">
     <a href="{{path('user_page')}}"><input type="button" value="Utilisateurs"></a>
+    <a href="{{path('mesure_page')}}"><input type="button" value="Mesures"></a>
   <div>
   <header class="inner">
     <h2>Pieces</h2>
@@ -22,7 +23,7 @@
         <tr>
           <td><p class="text-error">{{piece.id}}</p></td>
           <td><p class="text-error">{{piece.idenPiece}}</p></td>
-          <td><p class="text-error">{{piece.nomPiece}}</p></td>
+          <td><p class="text-error">{{piece.idenMesure}}</p></td>
           <td><p class="text-error">{{piece.cdg}}</p></td>
           <td><p class="text-error">{{piece.poids}}</p></td>
           <td><p class="text-error">{{piece.dateProduction | date('d/m/Y')}}</p></td>

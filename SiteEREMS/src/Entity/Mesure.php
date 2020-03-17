@@ -17,14 +17,15 @@ class Mesure
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string")
      */
     private $idenRaspberry;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
+     * @ORM\OneToOne(targetEntity=Piece::class)
      */
-    private $nomPiece;
+    private $idenPiece;
 
     /**
      * @ORM\Column(type="float")
@@ -58,14 +59,14 @@ class Mesure
         return $this;
     }
 
-    public function getNomPiece(): ?string
+    public function getidenPiece(): ?string
     {
-        return $this->nomPiece;
+        return $this->idenPiece;
     }
 
-    public function setNomPiece(string $nomPiece): self
+    public function setidenPiece(string $idenPiece): self
     {
-        $this->nomPiece = $nomPiece;
+        $this->idenPiece = $idenPiece;
 
         return $this;
     }

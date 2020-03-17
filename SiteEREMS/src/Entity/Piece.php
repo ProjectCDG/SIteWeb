@@ -23,8 +23,9 @@ class Piece
 
     /**
      * @ORM\Column(type="string")
+     *@ORM\OneToMany(targetEntity=Mesure::class)
      */
-    private $nomPiece;
+    private $idenMesure;
 
     /**
      * @ORM\Column(type="float")
@@ -46,26 +47,26 @@ class Piece
         return $this->id;
     }
 
-    public function getIdenPiece(): ?string
+
+    public function getidenPiece(): ?string
     {
         return $this->idenPiece;
     }
 
-    public function setIdenPiece(string $idenPiece): self
+    public function setidenPiece(string $idenPiece): self
     {
         $this->idenPiece = $idenPiece;
 
         return $this;
     }
-
-    public function getNomPiece(): ?string
+    public function getidenMesure(): ?string
     {
-        return $this->nomPiece;
+        return $this->idenMesure;
     }
 
-    public function setNomPiece(string $nomPiece): self
+    public function setidenMesure(string $idenMesure): self
     {
-        $this->nomPiece = $nomPiece;
+        $this->idenMesure = $idenMesure;
 
         return $this;
     }
