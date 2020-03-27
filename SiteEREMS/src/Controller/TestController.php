@@ -25,13 +25,7 @@ class TestController extends AbstractController
           'age'=> 15
       ]);
     }
-    /**
-     * @Route("/signIn", name="signIn")
-     */
-    public function signIn()
-    {
-      return $this->render('test/signIn.html.twig');
-    }
+
     /**
      * @Route("/piece", name="piece_page")
      */

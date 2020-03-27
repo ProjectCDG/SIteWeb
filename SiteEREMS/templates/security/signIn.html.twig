@@ -2,26 +2,25 @@
 {% block body %}
 
 <div class="inner">
-  <form action="#" method="post" onsubmit="return checked();"
-  name="regform" id="regform">
+  <form action="{{ path('signIn') }}" method="post">
     <header>
       <h3>Connexion</h3>
     </header>
     <div class="inner">
       <label for="email" class="label">Email:</label>
-      <input type="email" class="form-control" id="email" name="email"
-      placeholder="E-mail" maxlength="60" required>
+      <input type="email" class="form-control"
+      placeholder="E-mail" maxlength="60" required name="_username">
     </div>
       <div class="inner">
         <label for="password1" class="label">Mot de passe:</label><br/>
         <div class="inner">
-        <input type="password" class="form-control" id="password" name="password"
-        placeholder="Password" minlength="8" maxlength="12" required>
-        <span id='message'>Entre 8 et 12 caractères.</span>
+        <input type="password" class="form-control"
+        placeholder="Password" minlength="8" maxlength="12" required name="_password">
+        <span>Entre 8 et 12 caractères.</span>
       </div>
     </div>
     <footer>
-      <input id="Connexion" class="btn btn-primary" type="submit" name="login_btn" value="Connexion">
+      <input class="btn btn-success" type="submit" name="login_btn" value="Connexion">
     </footer>
   </form>
 </div>

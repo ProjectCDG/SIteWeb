@@ -1,18 +1,8 @@
-{% extends 'base.html.twig' %}
 
+<h2><strong><center>Utilisateurs</center></strong></h2>
+<hr>
 
-{% block body %}
 <div class="inner">
-  <a href="{{path('piece_page')}}"><input type="button" value="Pièces"></a>
-  <a href="{{path('mesure_page')}}"><input type="button" value="Mesures"></a>
-</div>
-<section class = "utilisateurs">
-  <header class="inner">
-    <h2><center><strong> Utilisateurs </strong></center></h2>
-    <hr>
-    <a href="{{path('createUserPdf')}}"><input type="button" value="Générer PDF"></a>
-  </header>
-  <div class="inner">
     <table class="table table-bordered">
       <tr>
          <th><p class="text-error">id</p></th>
@@ -29,7 +19,6 @@
           <td><p class="text-error">{{utilisateur.email}}</p></td>
           <td><p class="text-error">{{utilisateur.registerdate | date('d/m/Y')}}</p></td>
         </tr>
-  </div>
-</section>
-{% endfor %}
-{% endblock %}
+</div>
+
+      {% endfor %}
