@@ -35,3 +35,9 @@ php bin/console server:run
 ```
 
 # Configurer la base de données
+
+Pour Symfony 5, il s'agit de mdifier une ligne dans le fichier ".env"
+
+```bash
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/db_name?serverVersion=5.7
+```
