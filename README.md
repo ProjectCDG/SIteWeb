@@ -4,9 +4,9 @@ installation et configuration du site web pour un usage local.
 
 ## Installation
 
-Utilisation du server [WAMPSERVER](http://www.wampserver.com/) pour les applications web dynamiques sous le server Apache2, prend en compte PHP7.2 et d'une base de données MYSQL. Ainsi que PHPMyAdmin pour l'administration de celles-ci.
+  - Utilisation du server [WAMPSERVER](http://www.wampserver.com/) pour les applications web dynamiques sous le server Apache2, prend en compte PHP7.2 et d'une base de données MYSQL. Ainsi que PHPMyAdmin pour l'administration de celles-ci.
 
-Puis pour travailler avec Symfony, [Composer](https://getcomposer.org/), le gestionnaire de dépendance pour PHP
+  - Puis pour travailler avec Symfony, [Composer](https://getcomposer.org/), le gestionnaire de dépendance pour PHP
 
 Pour vérifier la bonne installation:
 
@@ -33,3 +33,5 @@ composer require server --dev
 ```bash
 php bin/console server:run
 ```
+
+# Configurer la base de données
