@@ -31,7 +31,18 @@ class Mesure
      * @ORM\Column(type="float")
      */
     private $cdgmesurer;
-
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $axeX;
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $axeY;
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $axeZ;
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -58,7 +69,6 @@ class Mesure
 
         return $this;
     }
-
     public function getidenPiece(): ?string
     {
         return $this->idenPiece;
@@ -81,6 +91,42 @@ class Mesure
         $this->cdgmesurer = $cdgmesurer;
 
         return $this;
+    }
+
+    public function getaxeX(): ?float
+    {
+      return $this->axeX;
+    }
+
+    public function setaxeX(float $axeX): self
+    {
+      $this->axeX = $axeX;
+
+      return $this;
+    }
+
+    public function getaxeY(): ?float
+    {
+      return $this->axeY;
+    }
+
+    public function setaxeY(float $axeY): self
+    {
+      $this->axeY = $axeY;
+
+      return $this;
+    }
+
+    public function getaxeZ(): ?float
+    {
+      return $this->axeZ;
+    }
+
+    public function setaxeZ(float $axeZ): self
+    {
+      $this->axeZ = $axeZ;
+
+      return $this;
     }
 
     public function getUsername(): ?string
