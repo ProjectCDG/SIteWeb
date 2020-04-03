@@ -1,0 +1,10 @@
+{% extends 'baseAfterLog.html.twig' %}
+
+
+{% block body %}
+<div class="inner">
+  <a href="{{path('user_page')}}"><input type="button" value="Utilisateurs"></a>
+  <a href="{{path('mesure_page')}}"><input type="button" value="Mesures"></a>
+  <a href="{{path('piece_page')}}"><input type="button" value="Pièces"></a>
+<div>
+{% endblock %}

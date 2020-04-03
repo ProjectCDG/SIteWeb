@@ -22,7 +22,15 @@ class TestController extends AbstractController
     public function home()
     {
       return $this->render('test/home.html.twig', [
-          'age'=> 15
+      ]);
+    }
+
+    /**
+     * @Route("/homeUser", name="homeUser")
+     */
+    public function homeUser()
+    {
+      return $this->render('test/homeAfterLog.html.twig', [
       ]);
     }
 
