@@ -1,0 +1,16 @@
+{% extends 'base.html.twig '%}
+{% block body%}
+<div class="inner">
+{{ form_start(formUtilisateurs) }}
+
+  {{ form_row(formUtilisateurs.first_name, {'attr':{'placeholder': "Firstname"}}) }}
+  {{ form_row(formUtilisateurs.last_name, {'attr':{'placeholder': "Lastname"}}) }}
+  {{ form_row(formUtilisateurs.username, {'attr':{'placeholder': "username"}}) }}
+  {{ form_row(formUtilisateurs.email, {'attr':{'placeholder': "Email "}}) }}
+  {{ form_row(formUtilisateurs.password, {'attr':{'placeholder': "password (8 characters minimum) "}}) }}
+  {{ form_row(formUtilisateurs.confirm_password, {'attr':{'placeholder': "repeat the same password "}}) }}
+
+  <button type="submit" class="btn btn-success">Submit</button>
+{{form_end(formUtilisateurs)}}
+</div>
+{% endblock %}

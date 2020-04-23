@@ -1,0 +1,36 @@
+{% extends 'baseAfterLog.html.twig '%}
+
+
+{% block body %}
+  <div class="inner">
+    <a href="{{path('user_page')}}"><input type="button" value="Utilisateurs"></a>
+    <a href="{{path('mesure_page')}}"><input type="button" value="Mesures"></a>
+  <div>
+  <header class="inner">
+    <h2><center><strong> Pièces </strong></center></h2>
+    <hr>
+    <a href="{{path('createPiecePdf')}}"><input type="button" value="Générer PDF"></a>
+  </header>
+  <div class="inner">
+    <table class="table table-bordered">
+      <tr>
+         <th><p class="text-error">id</p></th>
+         <th><p class="text-error">identifiant Pièce</p></th>
+         <th><p class="text-error">Nom</p></th>
+         <th><p class="text-error">Centre de gravité</p></th>
+         <th><p class="text-error">Poids</p></th>
+         <th><p class="text-error">Date mise production</p></th>
+      </tr>
+      {% for piece in pieces %}
+        <tr>
+          <td><p class="text-error">{{piece.id}}</p></td>
+          <td><p class="text-error">{{piece.idenPiece}}</p></td>
+          <td><p class="text-error">{{piece.idenMesure}}</p></td>
+          <td><p class="text-error">{{piece.cdg}}</p></td>
+          <td><p class="text-error">{{piece.poids}}</p></td>
+          <td><p class="text-error">{{piece.dateProduction | date('d/m/Y')}}</p></td>
+        </tr>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{% block title %}  EREMS  {% endblock %}</title>
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet"/>
+          <link rel="shortcut icon" type="image/png" href="logo.png" />
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header">
+          <div class="inner">
+            <a href="{{ path('home')}}" class="logo">HOME</a>
+            <nav id="nav">
+              <a type="button" class="btn btn-secondary" href="{{ path('signUp') }}" >Sign up</a>
+              <a type="button" class="btn btn-secondary" href="{{ path('app_login') }}" >Sign in </a>
+            </nav>
+            <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+          </div>
+        </header>
+        <!-- Banner -->
+        <section id="banner">
+          <h1>Welcome to EREMS</h1>
+        </section>
+
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
