@@ -16,6 +16,9 @@ class MesureFixtures extends Fixture
           $mesure = new mesure();
           $mesure->setIdenRaspberry("identifiantRasp n°$i")
                   ->setidenPiece("identifiantPiece n°$i")
+                  ->setaxeX('10.0')
+                  ->setaxeY('10.0')
+                  ->setaxeZ('10.0')
                   ->setCdgmesurer('10.0')
                   ->setUsername("username n°$i")
                   ->setDateMesure(new \DateTime());
